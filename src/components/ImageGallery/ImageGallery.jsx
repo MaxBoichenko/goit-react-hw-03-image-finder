@@ -23,6 +23,7 @@ export class ImageGallery extends Component {
       if (this.props.value !== prevProps.value) {
         this.setState({
           images: [],
+          status: '',
         });
       }
 
@@ -77,7 +78,7 @@ export class ImageGallery extends Component {
       return <p>{this.state.error.message}</p>;
     }
     if (this.state.status === 'empty') {
-      return <p>Картинок {this.props.value} не найдено</p>;
+      return <p>По результату поиска {this.props.value} не найдено</p>;
     }
 
     if (this.state.status === 'resolved') {
