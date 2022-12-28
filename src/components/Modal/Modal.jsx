@@ -17,14 +17,14 @@ export class Modal extends Component {
     }
   };
   onOverlayClick = event => {
-    if (event.target.getAttribute('name') === 'overlay') {
+    if (event.target === event.currentTarget) {
       this.props.imageReset();
     }
   };
 
   render() {
     return (
-      <Overlay onClick={this.onOverlayClick} name="overlay">
+      <Overlay onClick={this.onOverlayClick}>
         <ModalContainer>
           <img
             src={this.props.image.largeImageURL}
